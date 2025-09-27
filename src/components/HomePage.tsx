@@ -214,43 +214,12 @@ const HomePage: React.FC<HomePageProps> = ({ apiKey }) => {
     <div className="min-h-screen bg-gray-900 text-white">
       <section className="py-20 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="mb-8">
-            <img 
-              src="https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop" 
-              alt="פלטפורמה מתקדמת ליצירת סיכומי וידאו" 
-              className="mx-auto rounded-lg shadow-2xl max-w-md w-full"
-            />
-          </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             יוצר סיכומי וידאו
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             הפלטפורמה המתקדמת ביותר ליצירת סיכומי וידאו מקצועיים לסרטים וסדרות באמצעות בינה מלאכותית של Google Gemini
           </p>
-          
-          {/* תוכן נוסף לשיפור איכות העמוד */}
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 text-right">
-              <div className="bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-white mb-3">🎬 ליוצרי תוכן</h3>
-                <p className="text-gray-300">
-                  צרו סיכומי וידאו מקצועיים לערוץ היוטיוב שלכם. חסכו שעות של עבודה ויצרו תוכן איכותי שמושך צופים.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-white mb-3">📱 לרשתות חברתיות</h3>
-                <p className="text-gray-300">
-                  הפכו סרטים ארוכים לקליפים קצרים ומעניינים לאינסטגרם, טיקטוק ופייסבוק. תוכן ויראלי בקלות.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-white mb-3">🎯 למרקטינג</h3>
-                <p className="text-gray-300">
-                  צרו טריילרים וסיכומים למוצרי מדיה, הרצאות ואירועים. כלי מושלם לקידום ושיווק תוכן.
-                </p>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </section>
 
@@ -334,6 +303,139 @@ const HomePage: React.FC<HomePageProps> = ({ apiKey }) => {
       </section>
 
       <StatsSection />
+      
+      {/* תוכן נוסף לשיפור איכות העמוד */}
+      <section className="bg-gray-800 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              איך זה עובד?
+            </h2>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              תהליך פשוט ומהיר ליצירת סיכומי וידאו מקצועיים
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "1",
+                title: "העלאת וידאו",
+                description: "העלו את קובץ הווידאו שלכם (עד 2GB) בפורמטים נפוצים כמו MP4, AVI, MOV",
+                icon: "📁"
+              },
+              {
+                step: "2", 
+                title: "הגדרת פרמטרים",
+                description: "בחרו את אורך הסיכום, תדירות החיתוך והוסיפו תיאור מפורט לווידאו",
+                icon: "⚙️"
+              },
+              {
+                step: "3",
+                title: "עיבוד AI",
+                description: "הבינה המלאכותית מנתחת את הווידאו ויוצרת תסריט מותאם אישית בעברית",
+                icon: "🤖"
+              },
+              {
+                step: "4",
+                title: "תוצאה מוכנה",
+                description: "קבלו וידאו מעובד עם תסריט מקצועי וקריינות איכותית מוכנה לשימוש",
+                icon: "✨"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  {item.icon}
+                </div>
+                <div className="bg-gray-700 rounded-lg p-6 h-full">
+                  <div className="text-blue-400 font-bold text-lg mb-2">שלב {item.step}</div>
+                  <h3 className="text-white font-semibold text-xl mb-3">{item.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* סקציית יתרונות */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              למה לבחור בנו?
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "טכנולוגיה מתקדמת",
+                description: "שימוש בבינה מלאכותית של Google Gemini ומנוע FFmpeg המתקדם לעיבוד וידאו איכותי",
+                icon: "🚀"
+              },
+              {
+                title: "חיסכון בזמן",
+                description: "מה שלוקח שעות בעריכה ידנית, אצלנו נעשה תוך דקות ספורות באופן אוטומטי",
+                icon: "⏰"
+              },
+              {
+                title: "איכות מקצועית",
+                description: "תוצאות ברמה מקצועית עם תסריט מותאם וקריינות איכותית בעברית",
+                icon: "🎯"
+              },
+              {
+                title: "קל לשימוש",
+                description: "ממשק פשוט ואינטואיטיבי שמתאים לכל רמות המשתמשים, ללא צורך בידע טכני",
+                icon: "👥"
+              },
+              {
+                title: "בטוח ומאובטח",
+                description: "הקבצים שלכם מוגנים ונמחקים אוטומטית לאחר העיבוד. פרטיותכם חשובה לנו",
+                icon: "🔒"
+              },
+              {
+                title: "תמיכה מלאה",
+                description: "צוות התמיכה שלנו זמין לעזרה ולמענה על שאלות בכל שעות היום",
+                icon: "💬"
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-800 rounded-lg p-6 border border-gray-700"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, borderColor: '#3B82F6' }}
+              >
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

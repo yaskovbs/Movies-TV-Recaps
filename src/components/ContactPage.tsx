@@ -61,6 +61,13 @@ const ContactPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="mb-8">
+            <img 
+              src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop" 
+              alt="צוות התמיכה שלנו" 
+              className="mx-auto rounded-lg shadow-lg max-w-md w-full"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             פרטי קשר
           </h1>
