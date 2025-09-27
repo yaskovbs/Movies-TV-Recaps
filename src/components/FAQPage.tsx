@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, HelpCircle } from 'lucide-react'
+import { ChevronDown, CircleHelp as HelpCircle } from 'lucide-react'
 import type { FAQ } from '../types'
 
 const FAQPage: React.FC = () => {
