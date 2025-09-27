@@ -214,12 +214,43 @@ const HomePage: React.FC<HomePageProps> = ({ apiKey }) => {
     <div className="min-h-screen bg-gray-900 text-white">
       <section className="py-20 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <div className="mb-8">
+            <img 
+              src="https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop" 
+              alt="פלטפורמה מתקדמת ליצירת סיכומי וידאו" 
+              className="mx-auto rounded-lg shadow-2xl max-w-md w-full"
+            />
+          </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             יוצר סיכומי וידאו
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             הפלטפורמה המתקדמת ביותר ליצירת סיכומי וידאו מקצועיים לסרטים וסדרות באמצעות בינה מלאכותית של Google Gemini
           </p>
+          
+          {/* תוכן נוסף לשיפור איכות העמוד */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 text-right">
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-3">🎬 ליוצרי תוכן</h3>
+                <p className="text-gray-300">
+                  צרו סיכומי וידאו מקצועיים לערוץ היוטיוב שלכם. חסכו שעות של עבודה ויצרו תוכן איכותי שמושך צופים.
+                </p>
+              </div>
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-3">📱 לרשתות חברתיות</h3>
+                <p className="text-gray-300">
+                  הפכו סרטים ארוכים לקליפים קצרים ומעניינים לאינסטגרם, טיקטוק ופייסבוק. תוכן ויראלי בקלות.
+                </p>
+              </div>
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-3">🎯 למרקטינג</h3>
+                <p className="text-gray-300">
+                  צרו טריילרים וסיכומים למוצרי מדיה, הרצאות ואירועים. כלי מושלם לקידום ושיווק תוכן.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </section>
 
